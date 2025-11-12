@@ -1,12 +1,16 @@
-/* 現代設計的核心：重置、字體和顏色 */
+/* --- V2.0 美化升級版 CSS --- */
+
+/* 1. 色彩與字體提升 */
 :root {
-    --primary-color: #007bff; /* 主題藍色 */
-    --secondary-color: #f8f9fa; /* 淺灰色背景 */
-    --text-color: #343a40; /* 深灰色文本 */
+    --primary-color: #5b7efd; /* 專業、科技感的亮藍色 */
+    --accent-color: #ff6b6b; /* 輔助色，用於高亮元素 */
+    --background-light: #f4f7f9; /* 柔和淺灰色背景 */
+    --text-dark: #2c3e50; /* 專業深藍/灰色文本 */
     --font-family: 'Inter', sans-serif;
+    --shadow-soft: 0 8px 15px rgba(0, 0, 0, 0.08); /* 更強烈的軟陰影 */
 }
 
-/* 全局樣式重置 */
+/* 全局樣式 */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,115 +19,169 @@
 
 body {
     font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: #ffffff; /* 白色背景 */
+    line-height: 1.7; /* 增加行高，提升可讀性 */
+    color: var(--text-dark);
+    background-color: var(--background-light); 
 }
 
-/* 導航欄 (Navbar) 樣式 */
+/* 導航欄 (Navbar) - 增加黏性和邊緣 */
 .navbar {
+    position: sticky; /* 滾動時導航欄固定 */
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 輕微陰影，增加層次感 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 更明顯的陰影 */
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .navbar nav a {
     text-decoration: none;
-    color: var(--text-color);
-    margin-left: 1.5rem;
-    font-weight: 400;
-    transition: color 0.3s;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+    position: relative;
 }
 
 .navbar nav a:hover {
     color: var(--primary-color);
 }
 
-/* 主體內容 (Hero Section) 樣式 */
+/* 主體內容 (Hero Section) - 更具衝擊力 */
 .hero {
-    background-color: var(--secondary-color);
-    padding: 6rem 5%;
+    background-image: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+    padding: 8rem 5% 6rem;
     text-align: center;
-    min-height: 60vh; /* 佔據螢幕高度的一部分 */
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: var(--text-color);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -1px; /* 增加標題的衝擊力 */
 }
 
 .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
     color: #6c757d;
 }
 
-/* 按鈕 (Button) 樣式：簡潔、圓角 */
+/* 按鈕 (Button) - 增加 3D 深度感 */
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.75rem 2rem;
+    padding: 0.9rem 2.5rem;
     text-decoration: none;
-    border-radius: 5px; /* 輕微圓角 */
-    font-weight: 400;
-    transition: background-color 0.3s;
+    border-radius: 8px; /* 增加圓角 */
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(91, 126, 253, 0.4); /* 增加顏色陰影 */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #4a68e8; /* 稍暗的懸停色 */
+    box-shadow: 0 4px 10px rgba(91, 126, 253, 0.6);
 }
 
-/* 特色區塊 (Features Grid) 樣式 */
+/* 嵌入連結區塊 (Embed Section) */
+.embed-section {
+    padding: 6rem 5%;
+    text-align: center;
+    background-color: #ffffff; 
+}
+
+.embed-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.embed-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* 次要按鈕樣式 */
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.9rem 2.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* 2. 視覺層次強化：特色區塊使用卡片設計 */
 .features-grid {
     display: flex;
     justify-content: space-around;
-    padding: 4rem 5%;
-    gap: 20px; /* 項目間距 */
+    padding: 5rem 5%;
+    gap: 30px; /* 增加間距 */
     text-align: center;
+    background-color: var(--background-light);
 }
 
 .feature-item {
     flex: 1;
-    padding: 1.5rem;
+    padding: 2rem;
     background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px; /* 增加圓角 */
+    box-shadow: var(--shadow-soft); /* 使用更柔和的陰影 */
+    border-top: 4px solid var(--accent-color); /* 增加頂部強調線 */
 }
 
 .feature-item h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
 }
 
-/* 頁腳 (Footer) 樣式 */
+.feature-item p {
+    color: #555;
+}
+
+/* 頁腳 (Footer) */
 .footer {
-    padding: 1.5rem;
+    padding: 2rem;
     text-align: center;
-    background-color: var(--text-color);
-    color: white;
+    background-color: var(--text-dark); /* 深色背景 */
+    color: #e6e6e6;
     font-size: 0.9rem;
 }
 
-/* 響應式設計：針對小螢幕設備 (手機) 調整 */
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .features-grid {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -141,10 +199,10 @@ body {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .features-grid {
-        flex-direction: column; /* 特色項目垂直堆疊 */
+        flex-direction: column; 
     }
 }
