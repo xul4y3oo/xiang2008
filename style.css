@@ -1,0 +1,150 @@
+/* 現代設計的核心：重置、字體和顏色 */
+:root {
+    --primary-color: #007bff; /* 主題藍色 */
+    --secondary-color: #f8f9fa; /* 淺灰色背景 */
+    --text-color: #343a40; /* 深灰色文本 */
+    --font-family: 'Inter', sans-serif;
+}
+
+/* 全局樣式重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff; /* 白色背景 */
+}
+
+/* 導航欄 (Navbar) 樣式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 輕微陰影，增加層次感 */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 1.5rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 主體內容 (Hero Section) 樣式 */
+.hero {
+    background-color: var(--secondary-color);
+    padding: 6rem 5%;
+    text-align: center;
+    min-height: 60vh; /* 佔據螢幕高度的一部分 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #6c757d;
+}
+
+/* 按鈕 (Button) 樣式：簡潔、圓角 */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px; /* 輕微圓角 */
+    font-weight: 400;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* 特色區塊 (Features Grid) 樣式 */
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 5%;
+    gap: 20px; /* 項目間距 */
+    text-align: center;
+}
+
+.feature-item {
+    flex: 1;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 頁腳 (Footer) 樣式 */
+.footer {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計：針對小螢幕設備 (手機) 調整 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar nav a {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .features-grid {
+        flex-direction: column; /* 特色項目垂直堆疊 */
+    }
+}
