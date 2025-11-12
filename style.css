@@ -26,16 +26,16 @@ body {
 .logo {
     /* --- 1. 修改文字大小 (字號) --- */
     /* font-size: 1.8rem; <-- 這是V2.0預設值 */
-    font-size: 2.5rem; /* 範例：將字號改大，讓品牌名稱更醒目 */
+    font-size: 3.0rem; /* 範例：將字號改大，讓品牌名稱更醒目 */
     
     /* --- 2. 新增背景底色 --- */
     background-color: var(#ff6b6b); /* 範例：使用輔助色 (亮紅色 #ff6b6b) 作為底色 */
     
     /* 設定文字顏色，以確保在深色背景下可見 */
-    color: white;             /* 將文字顏色設為白色 */
+    color: black;             /* 將文字顏色設為白色 */
     
     /* 增加內邊距 (Padding)，使背景不會緊貼文字邊緣 */
-    padding: 5px 10px;        
+    padding: 10px 10px;        
     
     /* 增加圓角，讓視覺更柔和 */
     border-radius: 5px;       
