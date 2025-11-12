@@ -25,34 +25,31 @@ body {
 }
 
 /* 導航欄 (Navbar) - 增加黏性和邊緣 */
-.navbar {
-    position: sticky; /* 滾動時導航欄固定 */
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 更明顯的陰影 */
+/* 導航欄 (Navbar) 樣式 */
+/* ... (保留 .navbar 樣式不動) ... */
+
+/* 新增樣式：針對導航連結的容器 */
+.navbar nav {
+    /* *** 新增深藍色背景 *** */
+    background-color: var(--text-dark); /* 使用深藍色變數 */
+    
+    /* 增加邊框，使其不與導航欄緊貼 */
+    padding: 10px 15px; 
+    border-radius: 8px; /* 圓角效果 */
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
+/* 確保連結文字在深色背景上是可見的 */
 .navbar nav a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: #ffffff; /* 將連結文字設為白色 */
     margin-left: 2rem;
     font-weight: 500;
     position: relative;
 }
 
 .navbar nav a:hover {
-    color: var(--primary-color);
+    /* 懸停時使用強調色，讓效果更明顯 */
+    color: var(--accent-color); 
 }
 
 /* 主體內容 (Hero Section) - 更具衝擊力 */
